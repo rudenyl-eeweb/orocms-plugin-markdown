@@ -1,0 +1,15 @@
+{
+	"name": "rudenyl-eeweb/orocms-plugin-markdown",
+	"description": "Markdown plugin for Article module for OroCMS",
+	"authors": [
+		{
+			"name": "Dhens",
+			"email": "rudenyl.eeweb@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Plugins\\Markdown\\": ""
+		}
+	}
+}

@@ -1,0 +1,33 @@
+<link href="/plugin-markdown/assets.css" rel="stylesheet">
+<script src="/plugin-markdown/assets.js"></script>
+<script>
+$(function() {
+    // markdown editor
+    marked.setOptions({
+        gfm: true,
+        tables: true,
+        breaks: true,
+        sanitize: true,
+        smartLists: true
+    });
+
+    (function() {
+        var textarea = $('textarea')
+            .hide();
+        var editor = $('<div id="editor" />')
+            .text(textarea.html())
+            .insertAfter(textarea);
+
+        editor.markdownEditor({
+            preview: true,
+            fullscreen: false,
+            onPreview: function (content, callback) {
+                content = content.replace(/<br>/g, "!!!", content);
+                content = marked(content);
+                content = content.replace(/!!!/g, '<br>', content);
+                callback(content);
+            }
+        });
+    })();
+});
+</script>
