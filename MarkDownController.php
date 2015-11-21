@@ -37,7 +37,7 @@ class MarkDownController extends Controller
     {
         $fs = new FileSystem;
 
-        return $fs->glob(__DIR__ . '/Resources/**/*.' . $type);
+        return $fs->glob(__DIR__ . '/Assets/**/**/*.' . $type);
     }
 
     /**
