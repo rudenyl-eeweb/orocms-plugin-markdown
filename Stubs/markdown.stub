@@ -2,32 +2,17 @@
 <script src="/plugin-markdown/assets.js"></script>
 <script>
 $(function() {
-    // markdown editor
-    marked.setOptions({
-        gfm: true,
-        tables: true,
-        breaks: true,
-        sanitize: true,
-        smartLists: true
+    // set markdown
+    $('[role="md"]').each(function() {
+        var el = $(this),
+            target_ctx = el.attr('data-target') || false,
+            target_dom = target_ctx ? $(target_ctx) : el;
+
+        if (target_dom.length) {
+            var content = target_dom.text();
+            content = marked( $.trim(content) );
+            el.html(content);
+        }
     });
-
-    (function() {
-        var textarea = $('textarea')
-            .hide();
-        var editor = $('<div id="editor" />')
-            .text(textarea.html())
-            .insertAfter(textarea);
-
-        editor.markdownEditor({
-            preview: true,
-            fullscreen: false,
-            onPreview: function (content, callback) {
-                content = content.replace(/<br>/g, "!!!", content);
-                content = marked(content);
-                content = content.replace(/!!!/g, '<br>', content);
-                callback(content);
-            }
-        });
-    })();
 });
 </script>

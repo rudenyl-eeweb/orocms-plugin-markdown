@@ -7,5 +7,5 @@ class ArticlesAdminOnBeforeRenderItem
 {
     public function handle($article)
     {
-    }   
+    }
 }

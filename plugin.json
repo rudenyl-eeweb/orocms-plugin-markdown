@@ -9,6 +9,10 @@
     ],
     "hooks": [
         {
+            "event": "articles.onAfterRenderItem",
+            "class": "Plugins\\MarkDown\\Hooks\\ArticlesOnAfterRenderItem"
+        },
+        {
             "event": "articles.admin.onBeforeRenderItem",
             "class": "Plugins\\MarkDown\\Hooks\\ArticlesAdminOnBeforeRenderItem"
         },
