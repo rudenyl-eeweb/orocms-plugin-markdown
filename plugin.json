@@ -21,7 +21,5 @@
             "class": "Plugins\\MarkDown\\Hooks\\ArticlesAdminOnAfterRenderItem"
         }
     ],
-    "files": [
-        "start.php"
-    ]
+    "files": []
 }
